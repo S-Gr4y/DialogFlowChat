@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AiChatKit</string>
+    <string name="hint_enter_a_message">Enter a message</string>
+    <string name="non_empty_query">Query can\'t be empty</string>
+</resources>

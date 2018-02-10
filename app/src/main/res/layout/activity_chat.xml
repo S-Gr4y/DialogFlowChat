@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="be.qaz.app.chatbotkit.chatkit.AiChatActivity"
+    android:background="@color/white">
+
+    <com.stfalcon.chatkit.messages.MessagesList
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:incomingDefaultBubbleColor="@color/gray"
+        app:outcomingDefaultBubbleColor="@color/colorPrimary"
+        app:incomingDefaultBubbleSelectedColor="@color/gray"
+        app:incomingDefaultBubblePressedColor="@color/gray"
+        app:outcomingDefaultBubbleSelectedColor="@color/colorPrimary"
+        app:outcomingDefaultBubblePressedColor="@color/colorPrimary"
+        app:incomingTextColor="@color/white"
+        android:layout_above="@+id/input"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/input"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/gray_light"/>
+
+    <com.stfalcon.chatkit.messages.MessageInput
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:inputMaxLines="1"
+        app:inputButtonDefaultBgColor="@color/colorPrimary"
+        app:inputButtonDefaultBgDisabledColor="@color/gray_light"
+        app:inputButtonDefaultBgPressedColor="@color/colorPrimaryDark"
+        app:attachmentButtonIcon="@drawable/ic_mic_black_24dp"
+        app:attachmentButtonDefaultIconColor="@color/gray"
+        app:attachmentButtonDefaultBgColor="@color/orange"
+        app:attachmentButtonDefaultBgPressedColor="@color/colorPrimaryDark"
+        app:attachmentButtonDefaultBgDisabledColor="@color/gray_light"
+        app:inputHint="@string/hint_enter_a_message"
+        app:showAttachmentButton="true"/>
+
+</RelativeLayout>
