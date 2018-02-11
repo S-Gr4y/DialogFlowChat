@@ -1,13 +1,13 @@
-package be.qaz.app.chatbotkit.dialogflow;
+package be.qaz.app.aichatbot.aichat.interactor;
 
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
 
 /**
- * Created by qaz on 10/02/2018.
+ * Created by qaz on 11/02/2018.
  */
 
-interface AiAsyncTaskCallback {
+public interface AiInteractorTask {
 
     void onTaskResult(AIResponse response);
     void onTaskError(AIError error);

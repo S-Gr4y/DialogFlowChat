@@ -1,4 +1,4 @@
-package be.qaz.app.chatbotkit.dialogflow;
+package be.qaz.app.aichatbot.component.dialogflow;
 
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;

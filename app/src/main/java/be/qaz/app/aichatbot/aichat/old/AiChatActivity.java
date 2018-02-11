@@ -1,4 +1,4 @@
-package be.qaz.app.chatbotkit.chatkit;
+package be.qaz.app.aichatbot.aichat.old;
 
 import android.support.annotation.NonNull;
 import android.os.Bundle;
@@ -12,26 +12,27 @@ import java.util.UUID;
 
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
-import be.qaz.app.chatbotkit.R;
-import be.qaz.app.chatbotkit.dialogflow.AiBaseActivity;
-import be.qaz.app.chatbotkit.dialogflow.TTS;
+import be.qaz.app.aichatbot.R;
+import be.qaz.app.aichatbot.component.chatkit.Message;
+import be.qaz.app.aichatbot.component.chatkit.User;
+import be.qaz.app.aichatbot.component.dialogflow.AiBaseActivity;
+import be.qaz.app.aichatbot.component.dialogflow.TTS;
 
 public class AiChatActivity extends AiBaseActivity {
 
     private static final String TAG = "AiChatActivity";
     private MessagesList messagesList;
+    private MessageInput messageInput;
     protected MessagesListAdapter<Message> messagesAdapter;
     private User mUser = new User("User");
     private User mAiBot = new User("AiBot");
-    private MessageInput messageInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        this.messagesList = (MessagesList) findViewById(R.id.messagesList);
-
+        messagesList = (MessagesList) findViewById(R.id.messagesList);
         messageInput = (MessageInput) findViewById(R.id.input);
 
         initAdapter();
@@ -59,12 +60,6 @@ public class AiChatActivity extends AiBaseActivity {
         });
     }
 
-    private void addUserChatMessage(String text) {
-        messagesAdapter.addToStart(
-                new Message(UUID.randomUUID().toString(), mUser, text), true);
-        sendRequest(text);
-    }
-
     @Override
     public void onTaskResult(AIResponse response) {
         super.onTaskResult(response);
@@ -84,12 +79,6 @@ public class AiChatActivity extends AiBaseActivity {
         return response.getResult().getAction();
     }
 
-    private void addBotChatMessage(@NonNull String textMessage) {
-        messagesAdapter.addToStart(
-                new Message(UUID.randomUUID().toString(), mAiBot, textMessage.trim()), true);
-        TTS.speak(textMessage);
-    }
-
     @Override
     public void onTaskError(AIError error) {
         super.onTaskError(error);
@@ -100,5 +89,17 @@ public class AiChatActivity extends AiBaseActivity {
 
     private String extractSpeech(AIResponse response) {
         return response.getResult().getFulfillment().getSpeech();
+    }
+
+    private void addBotChatMessage(@NonNull String textMessage) {
+        messagesAdapter.addToStart(
+                new Message(UUID.randomUUID().toString(), mAiBot, textMessage.trim()), true);
+        TTS.speak(textMessage);
+    }
+
+    private void addUserChatMessage(String text) {
+        messagesAdapter.addToStart(
+                new Message(UUID.randomUUID().toString(), mUser, text), true);
+        sendRequest(text);
     }
 }

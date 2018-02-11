@@ -1,4 +1,4 @@
-package be.qaz.app.chatbotkit.dialogflow;
+package be.qaz.app.aichatbot.component.dialogflow;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -14,7 +14,7 @@ import ai.api.android.AIDataService;
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
 import ai.api.ui.AIDialog;
-import be.qaz.app.chatbotkit.R;
+import be.qaz.app.aichatbot.R;
 
 public class AiBaseActivity extends AppCompatActivity implements AiAsyncTaskCallback, AIDialog.AIDialogListener {
 

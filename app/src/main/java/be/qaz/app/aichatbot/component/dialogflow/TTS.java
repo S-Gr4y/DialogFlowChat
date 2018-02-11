@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package be.qaz.app.chatbotkit.dialogflow;
+package be.qaz.app.aichatbot.component.dialogflow;
 
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
 
+//TODO taken from Dialogflow repo, need to make a credit page
 public class TTS {
 
     private static TextToSpeech textToSpeech;

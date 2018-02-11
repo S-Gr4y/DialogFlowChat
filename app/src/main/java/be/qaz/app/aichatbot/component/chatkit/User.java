@@ -1,4 +1,4 @@
-package be.qaz.app.chatbotkit.chatkit;
+package be.qaz.app.aichatbot.component.chatkit;
 
 import com.stfalcon.chatkit.commons.models.IUser;
 

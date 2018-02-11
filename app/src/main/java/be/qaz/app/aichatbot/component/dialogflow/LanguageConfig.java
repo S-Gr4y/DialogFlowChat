@@ -1,4 +1,4 @@
-package be.qaz.app.chatbotkit.dialogflow;
+package be.qaz.app.aichatbot.component.dialogflow;
 
 /**
  * Created by qaz on 09/02/2018.

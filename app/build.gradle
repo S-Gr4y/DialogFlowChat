@@ -30,6 +30,4 @@ dependencies {
     compile 'com.github.stfalcon:chatkit:0.2.2'
     compile 'ai.api:sdk:2.0.7@aar'
     compile 'ai.api:libai:1.6.12'
-    compile 'me.himanshusoni.chatmessageview:chat-message-view:1.0.7'
-
 }
