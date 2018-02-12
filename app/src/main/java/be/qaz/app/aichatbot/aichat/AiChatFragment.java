@@ -19,13 +19,14 @@ import ai.api.model.AIError;
 import ai.api.model.AIResponse;
 import ai.api.ui.AIDialog;
 import be.qaz.app.aichatbot.R;
+import be.qaz.app.aichatbot.component.dialogflow.DialogFlowConfig;
 import be.qaz.app.aichatbot.component.chatkit.Message;
 import be.qaz.app.aichatbot.component.chatkit.User;
-import be.qaz.app.aichatbot.component.dialogflow.DialogFlowConfig;
 import be.qaz.app.aichatbot.component.dialogflow.PermissionUtil;
 import be.qaz.app.aichatbot.component.dialogflow.TTS;
 
 import static be.qaz.app.aichatbot.component.dialogflow.PermissionUtil.REQUEST_AUDIO_PERMISSIONS_ID;
+import static be.qaz.app.aichatbot.component.dialogflow.PermissionUtil.isAudioRecordPermissionAccepted;
 
 /**
  * Created by qaz on 10/02/2018.
@@ -77,8 +78,11 @@ public class AiChatFragment extends Fragment implements AIDialog.AIDialogListene
         messageInput.setAttachmentsListener(new MessageInput.AttachmentsListener() {
             @Override
             public void onAddAttachments() {
-                PermissionUtil.checkAudioRecordPermission(getActivity());
-                aiDialog.showAndListen();
+                if(isAudioRecordPermissionAccepted(getActivity())) {
+                    aiDialog.showAndListen();
+                } else {
+                    PermissionUtil.checkAudioRecordPermission(getActivity());
+                }
             }
         });
     }

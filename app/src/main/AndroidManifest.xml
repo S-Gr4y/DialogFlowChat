@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:name=".AiChatApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".aichat.AiChatAct">
+        <activity android:name=".aichat.AiChatAct"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

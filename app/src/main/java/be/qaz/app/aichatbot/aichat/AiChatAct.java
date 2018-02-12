@@ -1,14 +1,13 @@
 package be.qaz.app.aichatbot.aichat;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
 import be.qaz.app.aichatbot.R;
-import be.qaz.app.aichatbot.aichat.interactor.AiInteractorImpl;
 import be.qaz.app.aichatbot.component.dialogflow.DialogFlowConfig;
+import be.qaz.app.aichatbot.aichat.interactor.AiInteractorImpl;
 
 /**
  * Created by qaz on 11/02/2018.

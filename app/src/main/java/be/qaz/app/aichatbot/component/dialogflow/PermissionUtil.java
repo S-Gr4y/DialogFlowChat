@@ -14,6 +14,16 @@ public class PermissionUtil {
 
     public static final int REQUEST_AUDIO_PERMISSIONS_ID = 100;
 
+    public static boolean isAudioRecordPermissionAccepted(Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity,
+                Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public static void checkAudioRecordPermission(Activity activity) {
         if (ContextCompat.checkSelfPermission(activity,
                 Manifest.permission.RECORD_AUDIO)
